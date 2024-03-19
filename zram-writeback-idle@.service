@@ -1,8 +1,8 @@
 [Unit]
-Description=Trigger writeback on /dev/%i
+Description=Mark pages on /dev/%i as idle
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c "/usr/bin/echo 600 > /sys/block/%i/writeback"
+ExecStart=/bin/bash -c "/usr/bin/echo 600 > /sys/block/%i/idle"
