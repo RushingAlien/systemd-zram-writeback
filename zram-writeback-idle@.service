@@ -2,6 +2,7 @@
 Description=Mark pages on /dev/%i as idle
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
+Before=zram-writeback-trigger@%i.service
 
 [Service]
 Type=oneshot

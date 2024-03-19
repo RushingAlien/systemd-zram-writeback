@@ -4,8 +4,9 @@ DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
 
 [Timer]
-OnActiveSec=11min
+OnActiveSec=10min
 AccuracySec=10s
+FixedDelaySec=10s
 
 [Install]
 WantedBy=timers.target
