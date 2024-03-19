@@ -1,0 +1,11 @@
+[Unit]
+Description=Mark pages in /dev/%i as idle
+DefaultDependencies=false
+ConditionPathExists=/sys/block/%i/idle
+
+[Timer]
+OnActiveSec=11min
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target

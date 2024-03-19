@@ -1,0 +1,11 @@
+[Unit]
+Description=Trigger writeback on /dev/%i
+DefaultDependencies=false
+ConditionPathExists=/sys/block/%i/writeback
+
+[Timer]
+OnActiveSec=11min
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target
