@@ -6,7 +6,8 @@ ConditionPathExists=/sys/block/%i/writeback
 [Timer]
 OnActiveSec=10min
 AccuracySec=10s
-FixedDelaySec=10s
+RandomizedDelaySec=10s
+FixedRandomDelay=true
 
 [Install]
 WantedBy=timers.target
