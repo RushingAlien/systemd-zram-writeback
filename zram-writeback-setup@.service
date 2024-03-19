@@ -8,4 +8,4 @@ Type=oneshot
 ExecStart=/sbin/losetup /dev/%i /swap/writeback
 
 [Install]
-WantedBy=dev-loop0.device
+WantedBy=dev-%i.device
