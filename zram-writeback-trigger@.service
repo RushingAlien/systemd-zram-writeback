@@ -3,6 +3,7 @@ Description=Trigger writeback on /dev/%i
 DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
 After=zram-writeback-idle@%i.service
+Requires=zram-writeback-idle@%i.service
 
 [Service]
 Type=oneshot
