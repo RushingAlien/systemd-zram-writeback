@@ -4,7 +4,7 @@ DefaultDependencies=false
 ConditionPathExists=/sys/block/%i/idle
 
 [Timer]
-OnActiveSec=10min
+OnUnitInactiveSec=10min
 AccuracySec=10s
 RandomizedDelaySec=10s
 FixedRandomDelay=true
