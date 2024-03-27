@@ -1,0 +1,11 @@
+[Unit]
+Description=Sets mem_limit to /dev/%i
+After=systemd-zram-setup@%i.service
+ConditionPathExists=/sys/block/%i/mem_limit
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "echo 12G > /sys/block/%i/mem_limit"
+
+[Install]
+WantedBy=multi-user.target
