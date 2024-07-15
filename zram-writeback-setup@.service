@@ -1,11 +1,15 @@
 [Unit]
 Description=Setup zram writeback /dev/%i
 After=swap.mount
+Before=dev-%i.device
+BindsTo=dev-%i.device
 DefaultDependencies=false
 
 [Service]
 Type=oneshot
-ExecStart=/sbin/losetup /dev/%i /swap/writeback
+ExecStart=/sbin/losetup --direct-io /dev/%i /swap/writeback
+ExecStop=/sbin/losetup -d /dev/%i
+RemainAfterExit=true
 
 [Install]
 WantedBy=dev-%i.device

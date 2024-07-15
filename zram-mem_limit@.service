@@ -1,6 +1,6 @@
 [Unit]
 Description=Sets mem_limit to /dev/%i
-After=systemd-zram-setup@%i.service
+After=dev-%i.device
 ConditionPathExists=/sys/block/%i/mem_limit
 
 [Service]
